@@ -6,24 +6,26 @@
   <title>Retold — Personalised Nostalgia Frames</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1a1a1a;
-      --secondary-color: #7f8c8d;
-      --background-color: #fdfdfd;
-      --card-background: #ffffff;
-      --heading-font: 'Playfair Display', serif;
-      --body-font: 'Roboto', sans-serif;
+      --primary-color: #B2D8D8;
+      --secondary-color: #F0E68C;
+      --dark-color: #696969;
+      --light-color: #FEFEFE;
+      --background-color: #FEFEFE;
+      --heading-font: 'Cormorant Garamond', serif;
+      --body-font: 'Lato', sans-serif;
     }
 
     body {
       margin: 0;
       font-family: var(--body-font);
       background-color: var(--background-color);
-      color: var(--primary-color);
+      color: var(--dark-color);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .container {
@@ -33,30 +35,37 @@
     }
 
     header {
-      padding: 80px 0;
-      text-align: center;
+      padding: 40px 0;
+      text-align: left;
     }
 
     header img {
-      width: 130px;
-      margin-bottom: 24px;
+      width: 80px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
     }
 
     header p {
-      font-size: 18px;
-      color: var(--secondary-color);
+      font-size: 28px;
+      line-height: 1.5;
+      color: var(--dark-color);
       margin-top: 0;
-      font-weight: 300;
+      font-weight: 400;
+      font-family: var(--heading-font);
+    }
+
+    .hero-text {
+      text-align: center;
     }
 
     main {
-      padding: 40px 0;
+      padding: 50px 0;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 50px;
     }
 
     @media (min-width: 768px) {
@@ -72,46 +81,50 @@
     }
 
     .art-card {
-      background: var(--card-background);
-      border-radius: 8px;
+      background: var(--light-color);
+      border: 2px solid var(--dark-color);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 10px 10px 0px var(--primary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .art-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      transform: translate(-5px, -5px);
+      box-shadow: 15px 15px 0px var(--secondary-color);
     }
 
     .art-card img {
       width: 100%;
       display: block;
+      border-bottom: 2px solid var(--dark-color);
     }
 
     .art-card figcaption {
-      padding: 20px;
-      font-size: 15px;
-      color: #555;
+      padding: 24px;
+      font-size: 20px;
+      color: var(--dark-color);
       text-align: center;
-      font-style: italic;
+      font-family: var(--heading-font);
+      font-weight: 700;
     }
 
     .about-us {
-      padding: 80px 0;
+      padding: 100px 0;
       text-align: center;
     }
 
     .about-us h2 {
       font-family: var(--heading-font);
-      font-size: 32px;
+      font-size: 48px;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+      color: var(--primary-color);
     }
 
     .about-us p {
       font-size: 18px;
-      color: var(--secondary-color);
+      color: var(--dark-color);
       max-width: 650px;
       margin: 0 auto;
       line-height: 1.8;
@@ -119,43 +132,50 @@
     }
 
     footer {
-      padding: 60px 0;
+      padding: 80px 0;
       text-align: center;
     }
 
     footer p {
-      font-size: 16px;
-      color: #888;
-      margin-bottom: 32px;
-      font-weight: 300;
+      font-size: 20px;
+      color: var(--dark-color);
+      margin-bottom: 40px;
+      font-family: var(--heading-font);
+      font-weight: 700;
     }
 
     .cta {
       display: inline-block;
-      padding: 16px 32px;
+      padding: 18px 36px;
+      border: 2px solid var(--dark-color);
       border-radius: 50px;
       background: var(--primary-color);
-      color: white;
+      color: var(--dark-color);
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 400;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: var(--heading-font);
+      transition: all 0.3s ease;
+      box-shadow: 5px 5px 0px var(--dark-color);
     }
 
     .cta:hover {
-      background-color: #333;
-      transform: translateY(-2px);
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+      transform: translate(5px, 5px);
+      box-shadow: 0px 0px 0px var(--dark-color);
     }
 
     .social-links {
-      margin-top: 32px;
+      margin-top: 40px;
     }
 
     .social-links a {
-      margin: 0 16px;
+      margin: 0 20px;
       text-decoration: none;
-      color: var(--secondary-color);
-      font-size: 14px;
+      color: var(--dark-color);
+      font-size: 16px;
+      font-weight: 400;
       transition: color 0.3s ease;
     }
     
@@ -164,9 +184,9 @@
     }
 
     .copyright {
-      margin-top: 32px;
-      font-size: 12px;
-      color: #ccc;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
     }
 
   </style>
@@ -175,7 +195,9 @@
   <div class="container">
     <header>
       <img src="assets/logo/Transparent logo.png" alt="Retold Logo" />
-      <p>Personalised nostalgic frames of real moments & people</p>
+      <div class="hero-text">
+        <p>Personalised nostalgic frames of real moments & people</p>
+      </div>
     </header>
 
     <main>
@@ -187,10 +209,6 @@
         <figure class="art-card">
           <img src="assets/images/Prem.jpg" alt="A framed picture of a child" />
           <figcaption>Every child is a hero in their own story.</figcaption>
-        </figure>
-        <figure class="art-card">
-          <img src="assets/images/Virat.jpg" alt="A framed picture of a celebrity" />
-          <figcaption>Icons begin as dreams.</figcaption>
         </figure>
         <figure class="art-card">
           <img src="assets/images/Mohansh.jpg" alt="A framed picture of a person" />
